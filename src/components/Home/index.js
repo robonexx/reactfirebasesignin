@@ -10,7 +10,6 @@ const StyledHome = styled.div`
     color: palevioletred;
     display: flex;
     flex-flow: column;
-    justify-content: ;
     align-items: center;
     box-sizing: border-box;
 `
