@@ -4,7 +4,7 @@ import { withFirebase } from '../Firebase';
 import styled from 'styled-components'
 
 const StyledHome = styled.div`
-    background: radial-gradient(ellipse at bottom, #1B1B1E 40%, #373F51);
+    background: radial-gradient(ellipse at bottom, #1B1B1E, #373F51);
     width: 100vw;
     height: 100vh;
     color: palevioletred;
