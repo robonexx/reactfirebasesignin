@@ -3,6 +3,7 @@ import { withAuthorization, AuthUserContext } from '../Session';
 import { withFirebase } from '../Firebase';
 import styled from 'styled-components'
 
+
 const StyledHome = styled.div`
     background: radial-gradient(ellipse at bottom, #1B1B1E, #373F51);
     width: 100vw;
@@ -14,14 +15,59 @@ const StyledHome = styled.div`
     box-sizing: border-box;
 `
 const Styledh1 = styled.h1`
-font-size: 2rem;
+font-size: 3rem;
 color: #fafafa;
 ` 
+
+const StyledMessages = styled.div`
+position: absolute;
+right: 0;
+width: 30vw;
+z-index: 10;
+`
+const StyledLi = styled.li`
+list-style: none;
+margin-left: 0;
+`
+
+const StyledForm = styled.form`
+margin-left: 0;
+
+input {
+    background: black;
+    margin-left: 2rem;
+    border: none;
+    outline: none;
+    padding: 0.25em 1em;
+    margin-right: 0.5rem;
+    color: white;
+}
+`
+const Button = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 1rem 0;
+  margin-right: 2rem;
+  padding: 0.25em 1em;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background: lightgray;
+    color: black;
+  }
+
+`
+
 const HomePage = () => (
     <StyledHome>
         <Styledh1>B-E-V</Styledh1>
         <p>The Home Page is accessible by every signed in user.</p>
-        <Messages />
+        <StyledMessages>
+            <Messages />
+        </StyledMessages>
     </StyledHome>
 );
 
@@ -103,14 +149,15 @@ class MessagesBase extends Component {
                         ) : (
                                 <div>There are no messages ...</div>
                             )}
-                        <form onSubmit={event => this.onCreateMessage(event, authUser)}>
+                        <StyledForm onSubmit={event => this.onCreateMessage(event, authUser)}>
                             <input
                                 type="text"
                                 value={text}
                                 onChange={this.onChangeText}
+                                placeholder="write here..."
                             />
-                            <button type="submit">Send</button>
-                        </form>
+                            <Button type="submit" >SEND</Button>
+                        </StyledForm>
                     </div>
                 )}
             </AuthUserContext.Consumer>
@@ -162,7 +209,7 @@ render() {
             const { editMode, editText } = this.state;
 
 return (
-    <li>{editMode ? (
+    <StyledLi>{editMode ? (
         <input
         type="text"
         value={editText}
@@ -192,7 +239,7 @@ return (
         )}
     </span>
     )}
-    </li>
+    </StyledLi>
     );
 }
 }
