@@ -13,9 +13,13 @@ const StyledHome = styled.div`
     align-items: center;
     box-sizing: border-box;
 `
+const Styledh1 = styled.h1`
+font-size: 2rem;
+color: #fafafa;
+` 
 const HomePage = () => (
     <StyledHome>
-        <h1>B-E-V</h1>
+        <Styledh1>B-E-V</Styledh1>
         <p>The Home Page is accessible by every signed in user.</p>
         <Messages />
     </StyledHome>
