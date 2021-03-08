@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import Landing from '../Landing'
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
@@ -37,12 +37,17 @@ const NavigationAuth = () => (
     </div >
 );
 const NavigationNonAuth = () => (
-    <ul>
+    <>
+    {/* <ul>
         <li>
             <Link to={ROUTES.LANDING}>Landing</Link>
-        </li> <li>
+        </li> 
+        <li>
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </li>
-    </ul>);
+    </ul> */}
+    
+    </>
+    );
 
 export default Navigation;
