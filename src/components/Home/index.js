@@ -5,10 +5,10 @@ import styled from 'styled-components'
 
 
 const StyledHome = styled.div`
-    background: radial-gradient(ellipse at bottom, #1B1B1E, #373F51);
+    background: #1B1B1E;
     width: 100vw;
     height: 100vh;
-    color: palevioletred;
+    color: #fafafa;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -58,6 +58,26 @@ const Button = styled.button`
     background: lightgray;
     color: black;
   }
+`
+const Main = styled.main`
+width: 100vw;
+height: 500px;
+postition: relative;
+display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
+align-items: center;
+`
+const Chart1 = styled.div`
+width: 300px;
+height: 200px;
+background-color: #2B2D3E;
+margin: 2rem 3rem;
+` 
+const Chart2 = styled.div`
+width: 400px;
+height: 300px;
+background-color: #2B2D3E;
 
 `
 
@@ -65,6 +85,14 @@ const HomePage = () => (
     <StyledHome>
         <Styledh1>B-E-V</Styledh1>
         <p>The Home Page is accessible by every signed in user.</p>
+        <Main>
+            <Chart1>
+                chart1
+            </Chart1>
+                    <Chart2>
+                        chart2
+                    </Chart2>
+            </Main>
         <StyledMessages>
             <Messages />
         </StyledMessages>
